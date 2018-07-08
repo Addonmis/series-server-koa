@@ -12,7 +12,8 @@ if (ENV == "development"){
         host: process.env.mariaDB_host,
         user: process.env.mariaDB_user,
         password: process.env.mariaDB_password,
-        db: process.env.mariaDB_db
+        db: process.env.mariaDB_db,
+        charset: "utf8"
     };
 }
 

@@ -1,8 +1,12 @@
-// import Router from "koa-router";
+import Router from "koa-router";
 
-// import * as userController from "./controllers/user";
+import * as profileControllers from "./controllers";
 
-// const router = new Router({prefix: "/profile"});
+import checkUser from "../../handlers/checkUser";
 
-// router
-//     .get("/", userController.getProfile);
+const router = new Router({prefix: "/profile"});
+
+router
+    .post("/", checkUser(), profileControllers.profile.getData);
+
+export default router.routes();
